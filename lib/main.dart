@@ -30,17 +30,33 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+
+  //5 keys
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+
+  // 5
+
   bool nightMode = false;
+
+
+  // 3 date picker variables
 
   DateTime date = DateTime(2016, 10, 26);
   DateTime dateTime = DateTime(2016, 8, 3, 17, 45);
+// 3
+
+
+  // 4 dropdown menu items and variables
 
   List<String> list = <String>['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   String dropdownValue = 'Monday';
+
+  // 4
+
+  // 3 date picker function
 
   void _showDialog(Widget child) {
     showCupertinoModalPopup<void>(
@@ -48,14 +64,13 @@ class _MyHomePageState extends State<MyHomePage> {
       builder: (BuildContext context) => Container(
         height: 216,
         padding: const EdgeInsets.only(top: 6.0),
-        // The Bottom margin is provided to align the popup above the system
-        // navigation bar.
+
         margin: EdgeInsets.only(
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
-        // Provide a background color for the popup.
+
         color: CupertinoColors.systemBackground.resolveFrom(context),
-        // Use a SafeArea widget to avoid system overlaps.
+
         child: SafeArea(
           top: false,
           child: child,
@@ -63,6 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  // 3
 
   bool switchValue = false;
 
@@ -87,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
 
 
-                      /// 2  : vari custom Button ricorda di decommentare la quadra riga 108
+                      /// 2  : vari custom Button
 
                       CustomButton(
                       title: 'Button 1',
@@ -103,6 +120,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       nightMode: nightMode,
                     ),
+
+                    // 2
 
                    ]
                 ),
@@ -151,6 +170,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
+              // 3
+
               /// 4 Gestione eventi con DropDown Button deommenta anche la funzione sopra e il titolo all'inizio della colonna
 
         DropdownButton<String>(
@@ -176,7 +197,9 @@ class _MyHomePageState extends State<MyHomePage> {
           }).toList(),
         ),
 
-              /// 5 creazione del Form Decommenta anche la chiave sopra
+              // 4
+
+              // 5 creazione del Form Decommenta anche la chiave sopra
 
               Form(
                 key: _formKey,
@@ -198,7 +221,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
 
-                    //6 aggiunta del cupertino switch
 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -238,6 +260,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
               )
+
+              // 5 
 
             ],
           ),
